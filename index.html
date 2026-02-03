@@ -1,11 +1,196 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>My Site</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Hello from GitHub Pages</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Digital Store — Home</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <div class="announce">
+    <div class="container spread">
+      <div class="badge">⚡ Instant delivery • Secure checkout</div>
+      <div class="small hide-sm">New drops every week — grab bundles while they’re live</div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="container spread">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="logo" aria-hidden="true"></span>
+        <span>DigitalStore</span>
+      </a>
+
+      <nav class="navlinks">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="products.html">Products</a>
+        <a data-nav href="contact.html">Contact</a>
+      </nav>
+
+      <div class="row hide-sm">
+        <a class="btn small ghost" href="products.html">Browse</a>
+        <a class="btn small primary" href="products.html#featured">Shop now</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="kicker"><span class="dot"></span> Premium digital products • Instant access</div>
+          <h1>Sell downloads with a clean storefront that works on GitHub Pages.</h1>
+          <p class="sub">
+            Landing page, product listings, and a contact page — fast, mobile-friendly, and easy to edit.
+            Add your payment links and you’re live.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="products.html#featured">View products</a>
+            <a class="btn" href="contact.html">Ask a question</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <b>Instant delivery</b>
+              <span>Redirect buyers to a download page or provider delivery.</span>
+            </div>
+            <div class="stat">
+              <b>Simple edits</b>
+              <span>Change names/prices in one file (products.html).</span>
+            </div>
+            <div class="stat">
+              <b>Low cost</b>
+              <span>Static hosting + payment links = minimal monthly spend.</span>
+            </div>
+          </div>
+
+          <div class="note">Tip: Replace “BUY_LINK” on products with your payment provider link (Stripe/PayPal/etc.).</div>
+        </div>
+
+        <div class="hero-card">
+          <div class="kicker">✨ Featured bundle</div>
+          <h2 style="margin:10px 0 8px; font-size:26px;">Starter Bundle</h2>
+          <p class="small" style="margin-top:0;">
+            Perfect first offer: templates + guides + resources. High value, instant download.
+          </p>
+
+          <div style="margin-top:14px" class="card">
+            <div class="thumb">
+              <span class="pill">Most popular</span>
+            </div>
+            <div class="card-body">
+              <h3>Starter Bundle (Digital)</h3>
+              <div class="price">
+                <span class="now">$19.99</span>
+                <span class="was">$49.99</span>
+              </div>
+              <p class="meta">Includes: checklist, swipe files, and 10 templates. Delivered instantly after purchase.</p>
+              <div class="card-actions">
+                <a class="btn success small" href="products.html#starter">Get it now</a>
+                <a class="btn small" href="products.html">See all</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="featured">
+      <div class="section-title">
+        <div>
+          <h2>Featured products</h2>
+          <p>Swap these for your real items — titles, prices, and links.</p>
+        </div>
+        <a class="btn small" href="products.html">All products →</a>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"><span class="pill">New</span></div>
+          <div class="card-body">
+            <h3>Reseller Toolkit</h3>
+            <div class="price"><span class="now">$9.99</span></div>
+            <p class="meta">A compact toolkit with scripts, checklists, and a quick-start guide.</p>
+            <div class="card-actions">
+              <a class="btn small primary" href="products.html#toolkit">View</a>
+              <a class="btn small" href="contact.html">Questions</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><span class="pill">Bundle</span></div>
+          <div class="card-body">
+            <h3>Template Pack</h3>
+            <div class="price"><span class="now">$14.99</span></div>
+            <p class="meta">Copy/paste templates for listings, outreach, and customer support.</p>
+            <div class="card-actions">
+              <a class="btn small primary" href="products.html#templates">View</a>
+              <a class="btn small" href="products.html">Browse</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><span class="pill">Guide</span></div>
+          <div class="card-body">
+            <h3>Playbook PDF</h3>
+            <div class="price"><span class="now">$24.99</span></div>
+            <p class="meta">A step-by-step playbook for improving conversion and repeat buyers.</p>
+            <div class="card-actions">
+              <a class="btn small primary" href="products.html#playbook">View</a>
+              <a class="btn small" href="contact.html">Contact</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="row" style="align-items:center; gap:10px">
+          <span class="logo" aria-hidden="true"></span>
+          <b>DigitalStore</b>
+        </div>
+        <p class="small">
+          Digital products • Instant delivery • Built for simple static hosting.
+        </p>
+        <p class="small">© <span id="y"></span> DigitalStore. All rights reserved.</p>
+      </div>
+
+      <div>
+        <b>Get updates</b>
+        <p class="small">Add a simple email signup (connect to Mailchimp/Beehiiv later). For now it’s just a form UI.</p>
+        <form onsubmit="event.preventDefault(); alert('Thanks! (Connect this form to an email service later)');">
+          <div class="row" style="gap:10px; flex-wrap:wrap">
+            <input class="input" type="email" required placeholder="you@email.com" />
+            <button class="btn primary" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <hr class="sep" />
+      <div class="spread small">
+        <div class="row" style="gap:12px">
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="row" style="gap:12px">
+          <a href="#" onclick="alert('Add your social links here'); return false;">Instagram</a>
+          <a href="#" onclick="alert('Add your social links here'); return false;">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
 </html>
