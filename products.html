@@ -1,1 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Digital Store — Products</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <div class="announce">
+    <div class="container spread">
+      <div class="badge">✅ Instant access after purchase</div>
+      <div class="small hide-sm">Tip: Replace BUY_LINK with your payment link</div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="container spread">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="logo" aria-hidden="true"></span>
+        <span>DigitalStore</span>
+      </a>
+
+      <nav class="navlinks">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="products.html">Products</a>
+        <a data-nav href="contact.html">Contact</a>
+      </nav>
+
+      <a class="btn small primary hide-sm" href="contact.html">Need help?</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-title">
+        <div>
+          <h2 id="featured">Products</h2>
+          <p>Search, sort, and swap in your real items + payment links.</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <input class="input" data-search type="text" placeholder="Search products…" />
+        <select data-sort>
+          <option value="featured">Sort: Featured</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="name-asc">Name: A → Z</option>
+          <option value="name-desc">Name: Z → A</option>
+        </select>
+        <span class="small">Edit products directly in this HTML file.</span>
+      </div>
+
+      <div class="grid" data-products-grid>
+        <!-- Product 1 -->
+        <article class="card" id="starter"
+          data-product
+          data-name="Starter Bundle"
+          data-desc="bundle templates guides resources"
+          data-price="19.99">
+          <div class="thumb"><span class="pill">Most popular</span></div>
+          <div class="card-body">
+            <h3>Starter Bundle</h3>
+            <div class="price">
+              <span class="now">$19.99</span>
+              <span class="was">$49.99</span>
+            </div>
+            <p class="meta">A bundle of templates + guide. Great first offer. Instant download.</p>
+            <div class="card-actions">
+              <a class="btn success small" href="BUY_LINK" target="_blank" rel="noopener">Buy now</a>
+              <a class="btn small" href="contact.html">Ask a question</a>
+            </div>
+            <p class="helper">Replace <b>BUY_LINK</b> with your checkout URL.</p>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="card" id="toolkit"
+          data-product
+          data-name="Reseller Toolkit"
+          data-desc="scripts checklists quickstart"
+          data-price="9.99">
+          <div class="thumb"><span class="pill">New</span></div>
+          <div class="card-body">
+            <h3>Reseller Toolkit</h3>
+            <div class="price"><span class="now">$9.99</span></div>
+            <p class="meta">Scripts, checklists, and quick-start steps to move faster.</p>
+            <div class="card-actions">
+              <a class="btn success small" href="BUY_LINK" target="_blank" rel="noopener">Buy now</a>
+              <a class="btn small" href="#starter" onclick="alert('Bundle with Starter Bundle if you want!')">Bundle idea</a>
+            </div>
+            <p class="helper">Tip: Add a unique payment link per product.</p>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="card" id="templates"
+          data-product
+          data-name="Template Pack"
+          data-desc="templates copy paste listings outreach"
+          data-price="14.99">
+          <div class="thumb"><span class="pill">Bundle</span></div>
+          <div class="card-body">
+            <h3>Template Pack</h3>
+            <div class="price"><span class="now">$14.99</span></div>
+            <p class="meta">Ready-to-use templates for listings, outreach, and support replies.</p>
+            <div class="card-actions">
+              <a class="btn success small" href="BUY_LINK" target="_blank" rel="noopener">Buy now</a>
+              <a class="btn small" href="contact.html">Contact</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="card" id="playbook"
+          data-product
+          data-name="Playbook PDF"
+          data-desc="pdf guide conversion repeat buyers"
+          data-price="24.99">
+          <div class="thumb"><span class="pill">Guide</span></div>
+          <div class="card-body">
+            <h3>Playbook PDF</h3>
+            <div class="price"><span class="now">$24.99</span></div>
+            <p class="meta">Step-by-step guide to improve conversion and customer experience.</p>
+            <div class="card-actions">
+              <a class="btn success small" href="BUY_LINK" target="_blank" rel="noopener">Buy now</a>
+              <a class="btn small" href="contact.html">Support</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 5 -->
+        <article class="card"
+          data-product
+          data-name="Supplier List"
+          data-desc="contacts resources directory"
+          data-price="11.99">
+          <div class="thumb"><span class="pill">Hot</span></div>
+          <div class="card-body">
 
