@@ -1,1 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Digital Store — Contact</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <div class="announce">
+    <div class="container spread">
+      <div class="badge">💬 Support: 24–48h response</div>
+      <div class="small hide-sm">Use the form below — it opens your email app</div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="container spread">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="logo" aria-hidden="true"></span>
+        <span>DigitalStore</span>
+      </a>
+
+      <nav class="navlinks">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="products.html">Products</a>
+        <a data-nav href="contact.html">Contact</a>
+      </nav>
+
+      <a class="btn small primary hide-sm" href="products.html">Shop</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-title">
+        <div>
+          <h2>Contact</h2>
+          <p>Change the email address in this page to yours.</p>
+        </div>
+      </div>
+
+      <div class="card form-card">
+        <div class="small" style="margin-bottom:10px">
+          Email: <b>you@example.com</b> • Instagram/TikTok links can go in the footer.
+        </div>
+
+        <form data-contact-form data-to="you@example.com">
+          <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap:12px">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" class="input" name="name" required placeholder="Your name" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" class="input" name="email" type="email" required placeholder="you@email.com" />
+            </div>
+          </div>
+
+          <label for="topic">Topic</label>
+          <input id="topic" class="input" name="topic" placeholder="Order help / product question / custom request" style="width:100%" />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Tell us what you need…"></textarea>
+
+          <div class="row" style="margin-top:12px; flex-wrap:wrap">
+            <button class="btn primary" type="submit">Send message</button>
+            <a class="btn" href="products.html">Back to products</a>
+          </div>
+
+          <p class="helper">
+            This form uses <b>mailto:</b> (works on static hosting). If you want a real form that stores messages,
+            tell me what service you want (Formspree, Netlify Forms, etc.) and I’ll wire it up.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="spread small">
+        <div>© <span id="y"></span> DigitalStore</div>
+        <div class="row" style="gap:12px">
+          <a href="#" onclick="alert('Add your Instagram link'); return false;">Instagram</a>
+          <a href="#" onclick="alert('Add your TikTok link'); return false;">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
