@@ -80,7 +80,7 @@
   const cd = document.getElementById("countdown");
   if (!cd) return;
 
-  const bar = document.querySelector(".countdown-center");
+  const bar = document.querySelector(".countdown-wrap");
   const saleText = document.getElementById("saleText");
 
   const KEY_END = "tpa_sale_end_v1";
