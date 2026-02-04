@@ -75,32 +75,30 @@
 })();
 
 // 🔥 "REAL" SALE COUNTDOWN (persistent across refresh + pages via localStorage)
+// + Under 5 min: animate  | Under 60 sec: show HURRY + stronger animation
 (function saleCountdownPersistent(){
-  const el = document.getElementById("countdown");
-  if (!el) return;
+  const cd = document.getElementById("countdown");
+  if (!cd) return;
+
+  const bar = document.querySelector(".countdown-center");
+  const saleText = document.getElementById("saleText");
 
   const KEY_END = "tpa_sale_end_v1";
   const KEY_DURATION = "tpa_sale_duration_v1";
 
-  // Set your sale length here:
   const DEFAULT_DURATION_SECONDS = 15 * 60; // 15 minutes
-
-  // Optional: if you want longer sale windows sometimes, change this value.
   const duration = Number(localStorage.getItem(KEY_DURATION)) || DEFAULT_DURATION_SECONDS;
 
   function nowMs(){ return Date.now(); }
 
   function getOrCreateEndMs(){
     const saved = Number(localStorage.getItem(KEY_END));
-
-    // If missing/invalid OR already expired, create a new end time
     if (!saved || Number.isNaN(saved) || saved <= nowMs()) {
       const newEnd = nowMs() + duration * 1000;
       localStorage.setItem(KEY_END, String(newEnd));
       localStorage.setItem(KEY_DURATION, String(duration));
       return newEnd;
     }
-
     return saved;
   }
 
@@ -110,20 +108,36 @@
     return `${m}:${String(s).padStart(2, "0")}`;
   }
 
+  function setUrgency(seconds){
+    if (!bar) return;
+
+    // Reset classes
+    bar.classList.remove("is-urgent", "is-hurry");
+
+    // Default text
+    if (saleText) saleText.textContent = "🔥 FLASH SALE — 20% OFF ENDS IN";
+
+    if (seconds <= 60) {
+      bar.classList.add("is-hurry");
+      if (saleText) saleText.textContent = "⚠️ HURRY — SALE ENDS IN";
+    } else if (seconds <= 300) { // 5 minutes
+      bar.classList.add("is-urgent");
+    }
+  }
+
   function tick(){
     const endMs = getOrCreateEndMs();
     const remaining = Math.max(0, Math.floor((endMs - nowMs()) / 1000));
 
-    el.textContent = format(remaining);
+    cd.textContent = format(remaining);
+    setUrgency(remaining);
 
     // When it hits 0, start a new sale window automatically
     if (remaining <= 0) {
       localStorage.removeItem(KEY_END);
-      // next tick will recreate it
     }
   }
 
   tick();
   setInterval(tick, 1000);
 })();
-
