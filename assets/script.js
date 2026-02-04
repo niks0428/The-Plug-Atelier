@@ -75,7 +75,7 @@
 })();
 
 // 🔥 "REAL" SALE COUNTDOWN (persistent across refresh + pages via localStorage)
-// + Under 5 min: animate  | Under 60 sec: show HURRY + stronger animation
+// + Under 20 min: animate  | Under 5 min: show HURRY + stronger animation
 (function saleCountdownPersistent(){
   const cd = document.getElementById("countdown");
   if (!cd) return;
@@ -86,7 +86,7 @@
   const KEY_END = "tpa_sale_end_v1";
   const KEY_DURATION = "tpa_sale_duration_v1";
 
-  const DEFAULT_DURATION_SECONDS = 15 * 60; // 15 minutes
+  const DEFAULT_DURATION_SECONDS = 20 * 60; // 20 minutes
   const duration = Number(localStorage.getItem(KEY_DURATION)) || DEFAULT_DURATION_SECONDS;
 
   function nowMs(){ return Date.now(); }
@@ -117,10 +117,10 @@
     // Default text
     if (saleText) saleText.textContent = "🔥 FLASH SALE — 20% OFF ENDS IN";
 
-    if (seconds <= 60) {
+    if (seconds <= 300) {
       bar.classList.add("is-hurry");
       if (saleText) saleText.textContent = "⚠️ HURRY — SALE ENDS IN";
-    } else if (seconds <= 300) { // 5 minutes
+    } else if (seconds <= 1200) { // 20 minutes
       bar.classList.add("is-urgent");
     }
   }
