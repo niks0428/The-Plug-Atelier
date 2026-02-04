@@ -204,22 +204,53 @@ label{display:block; margin:12px 0 6px; color: rgba(244,246,255,.85); font-size:
 .footer a:hover{opacity:.9}
 hr.sep{border:0; border-top:1px solid var(--border); margin:18px 0}
 
+/* Countdown bar base */
+.countdown-center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+  letter-spacing:.06em;
+  font-size:18px;
+  text-transform:uppercase;
+}
+
 #countdown{
-  font-weight: 800;
+  font-size:28px;
   color: var(--brand2);
-  margin-left: 6px;
-  letter-spacing: .04em;
+  font-weight:900;
+  text-shadow: 0 0 15px rgba(45,255,155,.6);
 }
 
-.badge{
-  position: relative;
+/* Under 5 minutes: subtle urgency */
+.countdown-center.is-urgent{
+  animation: urgentPulse 1s infinite alternate;
 }
 
-.badge #countdown{
-  animation: pulse 1.2s infinite alternate;
+.countdown-center.is-urgent #countdown{
+  text-shadow: 0 0 22px rgba(45,255,155,.8);
 }
 
-@keyframes pulse{
-  from { opacity: .65; }
-  to   { opacity: 1; }
+/* Under 60 seconds: BIG urgency */
+.countdown-center.is-hurry{
+  animation: hurryShake .35s infinite;
+}
+
+.countdown-center.is-hurry #countdown{
+  color: #ff3b3b;
+  text-shadow: 0 0 25px rgba(255,59,59,.85);
+}
+
+@keyframes urgentPulse{
+  from{ transform: scale(1); opacity:.85; }
+  to  { transform: scale(1.03); opacity:1; }
+}
+
+@keyframes hurryShake{
+  0%{ transform: translateX(0) }
+  25%{ transform: translateX(-2px) }
+  50%{ transform: translateX(2px) }
+  75%{ transform: translateX(-1px) }
+  100%{ transform: translateX(0) }
 }
