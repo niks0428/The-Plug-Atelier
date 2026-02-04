@@ -12,6 +12,20 @@
   --radius: 18px;
   --max: 1120px;
 }
+/* ===== SITE LOGO IMAGE ===== */
+
+.site-logo{
+  width:38px;
+  height:auto;
+  margin-bottom:4px;
+}
+
+.center-brand{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
 
 .tagline{
   font-size:11px;
@@ -59,11 +73,6 @@ img{max-width:100%; display:block}
 .brand{
   display:flex; align-items:center; gap:10px;
   font-weight:800; letter-spacing:.3px;
-}
-.logo{
-  width:34px; height:34px; border-radius:10px;
-  background: conic-gradient(from 210deg, var(--brand), #2dd4bf, #f59e0b, var(--brand));
-  box-shadow: 0 10px 22px rgba(124,92,255,.18);
 }
 .navlinks{display:flex; gap:14px; align-items:center}
 .navlinks a{padding:10px 12px; border-radius:12px; color: rgba(244,246,255,.9)}
