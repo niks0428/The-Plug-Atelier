@@ -204,3 +204,22 @@ label{display:block; margin:12px 0 6px; color: rgba(244,246,255,.85); font-size:
 .footer a:hover{opacity:.9}
 hr.sep{border:0; border-top:1px solid var(--border); margin:18px 0}
 
+#countdown{
+  font-weight: 800;
+  color: var(--brand2);
+  margin-left: 6px;
+  letter-spacing: .04em;
+}
+
+.badge{
+  position: relative;
+}
+
+.badge #countdown{
+  animation: pulse 1.2s infinite alternate;
+}
+
+@keyframes pulse{
+  from { opacity: .65; }
+  to   { opacity: 1; }
+}
