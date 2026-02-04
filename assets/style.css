@@ -15,9 +15,9 @@
 /* ===== SITE LOGO IMAGE ===== */
 
 .site-logo{
-  width:38px;
+  width:42px;
   height:auto;
-  margin-bottom:4px;
+  display:block;
 }
 
 .center-brand{
