@@ -2,12 +2,25 @@
   --bg-main:#0b0d12;
   --bg-section:#11131a;
   --bg-card:#141723;
-  --text-primary:#ffffff;
-  --text-secondary:#9fa3b8;
+
+  --bg: #0b0d12;
+  --text: #ffffff;
+  --muted: #9fa3b8;
+
   --accent:#6d5dfc;
   --accent-hover:#5848e5;
   --danger:#ff4d4f;
+
+  --brand2: #2DFF9B;
+
+  --border: rgba(255,255,255,.08);
+
+  --radius: 18px;
+  --shadow: 0 20px 60px rgba(0,0,0,.45);
+
+  --max: 1200px;
 }
+
 /* ===== SITE LOGO IMAGE ===== */
 
 .site-logo{
@@ -92,8 +105,9 @@ img{max-width:100%; display:block}
 }
 
 .logo{
-  box-shadow: 0 0 30px rgba(123,92,255,.55);
+  box-shadow:none;
 }
+
 .btn-primary:hover{
   background:var(--accent-hover);
   transform:translateY(-1px);
@@ -285,9 +299,7 @@ hr.sep{border:0; border-top:1px solid var(--border); margin:18px 0}
   background: linear-gradient(135deg,#2DFF9B,#00ffcc);
   color:#000;
   border:none;
-  box-shadow:
-    0 0 25px rgba(45,255,155,.75),
-    0 0 50px rgba(45,255,155,.45);
+  box-shadow: 0 0 18px rgba(45,255,155,.55);
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
@@ -345,11 +357,11 @@ hr.sep{border:0; border-top:1px solid var(--border); margin:18px 0}
   gap:2px;
 }
 
-.center-brand .logo{
-  width:36px;
-  height:36px;
-  margin-bottom:2px;
+.center-brand img{
+  width:40px;
+  height:auto;
 }
+
 
 .center-brand .logo-text{
   font-weight:900;
