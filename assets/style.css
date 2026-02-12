@@ -391,12 +391,13 @@ hr.sep{border:0; border-top:1px solid var(--border); margin:18px 0}
 /* Product Image Styling */
 
 .thumb{
-  position: relative;
-  overflow: hidden;
-  border-radius: 0;
-  aspect-ratio: 1 / 1; /* keeps image square */
-  background: transparent;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    aspect-ratio: 1 / 1;
+    background: none;
 }
+
 
 .thumb img{
   width: 100%;
