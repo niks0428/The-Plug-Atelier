@@ -393,8 +393,9 @@ hr.sep{border:0; border-top:1px solid var(--border); margin:18px 0}
 .thumb{
   position: relative;
   overflow: hidden;
-  border-radius: 18px 18px 0 0;
+  border-radius: 0;
   aspect-ratio: 1 / 1; /* keeps image square */
+  background: transparent;
 }
 
 .thumb img{
@@ -408,3 +409,5 @@ hr.sep{border:0; border-top:1px solid var(--border); margin:18px 0}
 .card:hover .thumb img{
   transform: scale(1.05);
 }
+
+.thumb { background: red !important; }
