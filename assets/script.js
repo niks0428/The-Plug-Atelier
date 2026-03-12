@@ -102,10 +102,10 @@
   function setUrgency(seconds){
     if (!bar) return;
     bar.classList.remove("is-urgent", "is-hurry");
-    if (saleText) saleText.textContent = "🔥 FLASH SALE — 20% OFF ENDS IN";
+    if (saleText) saleText.textContent = "🔥 2026 SALE — 70% OFF ALL BUNDLES: PRICE GOES UP IN";
     if (seconds <= 300) {
       bar.classList.add("is-hurry");
-      if (saleText) saleText.textContent = "⚠️ HURRY — SALE ENDS IN";
+      if (saleText) saleText.textContent = "⚠️ HURRY — PRICE GOES UP IN";
     } else if (seconds <= 1200) {
       bar.classList.add("is-urgent");
     }
