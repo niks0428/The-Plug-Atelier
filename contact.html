@@ -3,11 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>THE ◆ PLUG ATELIER — Contact</title>
+  <title>The Plug Atelier — Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  
+
 <div class="announce">
   <div class="container">
     <div class="countdown-wrap">
@@ -17,85 +20,86 @@
   </div>
 </div>
 
-
 <header class="nav">
   <div class="container">
     <div class="nav-inner">
       <div class="nav-left">
-        <a href="products.html">Products</a>
-        <a href="contact.html">Contact</a>
+        <a href="products.html" data-nav>Products</a>
+        <a href="contact.html" data-nav>Contact</a>
       </div>
-
-      <a class="brand center-brand" href="index.html" aria-label="Home">
+      <a class="center-brand" href="index.html" aria-label="Home">
         <span class="logo-text">THE PLUG ATELIER</span>
         <small class="tagline">Digital Supplier Vault</small>
       </a>
-
       <div class="nav-right">
+        <a href="products.html" class="btn primary small">Shop Now</a>
+      </div>
     </div>
   </div>
 </header>
 
-  <main class="container">
-    <section class="section">
-      <div class="section-title">
-        <div>
-          <h2>Contact</h2>
-          <p>Change the email address in this page to yours.</p>
-        </div>
-      </div>
+<main class="container">
+  <section class="section">
+    <div class="section-header" style="margin-bottom:36px;">
+      <h2>Get In Touch</h2>
+      <p>Have a question about an order or product? We'll get back to you within 24 hours.</p>
+    </div>
 
-      <div class="card form-card">
-        <div class="small" style="margin-bottom:10px">
-          Email: <b>you@example.com</b> • Instagram/TikTok links can go in the footer.
-        </div>
-
-        <form data-contact-form data-to="you@example.com">
-          <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap:12px">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" class="input" name="name" required placeholder="Your name" />
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input id="email" class="input" name="email" type="email" required placeholder="you@email.com" />
-            </div>
+    <div class="form-card">
+      <form data-contact-form data-to="theplugatelier@gmail.com">
+        <div class="form-row">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" class="input" name="name" required placeholder="Your name" style="width:100%" />
           </div>
-
-          <label for="topic">Topic</label>
-          <input id="topic" class="input" name="topic" placeholder="Order help / product question / custom request" style="width:100%" />
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required placeholder="Tell us what you need…"></textarea>
-
-          <div class="row" style="margin-top:12px; flex-wrap:wrap">
-            <button class="btn primary" type="submit">Send message</button>
-            <a class="btn" href="products.html">Back to products</a>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" class="input" name="email" type="email" required placeholder="you@email.com" style="width:100%" />
           </div>
-
-          <p class="helper">
-            This form uses <b>mailto:</b> (works on static hosting). If you want a real form that stores messages,
-            tell me what service you want (Formspree, Netlify Forms, etc.) and I’ll wire it up.
-          </p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="spread small">
-        <div>© <span id="y"></span> THE ◆ PLUG ATELIER</div>
-        <div class="row" style="gap:12px">
-          <a href="#" onclick="alert('Add your Instagram link'); return false;">Instagram</a>
-          <a href="#" onclick="alert('www.tiktok.com/@theplugatelier'); return false;">TikTok</a>
         </div>
+
+        <label for="topic">Topic</label>
+        <input id="topic" class="input" name="topic" placeholder="Order help / product question / custom request" style="width:100%" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="Tell us what you need…"></textarea>
+
+        <div class="row" style="margin-top:20px; flex-wrap:wrap; gap:10px;">
+          <button class="btn primary" type="submit">Send Message</button>
+          <a class="btn ghost" href="products.html">Back to Products</a>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">THE PLUG ATELIER</div>
+        <div class="footer-tagline">Digital Supplier Vault</div>
+        <p class="footer-desc">Private, verified supplier contacts for the UK reselling market.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="products.html">All Products</a>
+        <a href="products.html#bundle">Mega Bundle</a>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <a href="https://www.tiktok.com/@theplugatelier" target="_blank" rel="noopener">TikTok</a>
+        <a href="index.html#faq">FAQ</a>
       </div>
     </div>
-  </footer>
+    <hr class="sep">
+    <div class="footer-bottom">
+      <span>© <span id="y"></span> The Plug Atelier. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
 
-  <script src="assets/script.js"></script>
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+<script src="assets/script.js"></script>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
-

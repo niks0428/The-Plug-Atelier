@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>THE ◆ PLUG ATELIER — Products</title>
+  <title>The Plug Atelier — Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -17,180 +20,346 @@
   </div>
 </div>
 
-
 <header class="nav">
   <div class="container">
     <div class="nav-inner">
       <div class="nav-left">
-        <a href="products.html">Products</a>
-        <a href="contact.html">Contact</a>
+        <a href="products.html" data-nav>Products</a>
+        <a href="contact.html" data-nav>Contact</a>
       </div>
-
-      <a class="brand center-brand" href="index.html" aria-label="Home">
+      <a class="center-brand" href="index.html" aria-label="Home">
         <span class="logo-text">THE PLUG ATELIER</span>
         <small class="tagline">Digital Supplier Vault</small>
       </a>
-
       <div class="nav-right">
+        <a href="products.html" class="btn primary small">Shop Now</a>
+      </div>
     </div>
   </div>
 </header>
 
+<main class="container">
+  <section class="section">
 
-  <main class="container">
-    <section class="section">
-      <div class="section-title">
-        <div>
-          <h2 id="featured">Products</h2>
-        </div>
-      </div>
-
-      <div class="toolbar">
-        <input class="input" data-search type="text" placeholder="Search products…" />
-        <select data-sort>
-          <option value="featured">Sort: Featured</option>
-          <option value="price-asc">Price: Low → High</option>
-          <option value="price-desc">Price: High → Low</option>
-          <option value="name-asc">Name: A → Z</option>
-          <option value="name-desc">Name: Z → A</option>
-        </select>
-      </div>
-
-      <div class="grid" data-products-grid>
-        <!-- Product 1 -->
-        <article class="card" id="Ralph"
-          data-product
-          data-name="Ralph Lauren Supplier"
-          data-desc="bundle templates guides resources"
-          data-price="29.99">
-          <div class="thumb">
-  <img src="images/Asics.webp" alt="Asics">
-  <span class="pill">Most popular</span>
-</div>
-          <div class="card-body">
-            <h3>Ralph Lauren Supplier</h3>
-            <div class="price">
-              <span class="now">£6.99</span>
-              <span class="was">£29.99</span>
-            </div>
-            <p class="meta">A bundle of templates + guide. Great first offer. Instant download.</p>
-            <div class="card-actions">
-              <a class="btn success buy-btn" href="https://buy.stripe.com/test_6oUdR8ay76Mc9wz6MW1VK00" target="_blank" rel="noopener">Buy now</a>
-          </div>
-        </article>
-
-        <!-- Product 2 -->
-        <article class="card" id="toolkit"
-          data-product
-          data-name="Reseller Toolkit"
-          data-desc="scripts checklists quickstart"
-          data-price="9.99">
-          <div class="thumb"><span class="pill">New</span></div>
-          <div class="card-body">
-            <h3>Reseller Toolkit</h3>
-            <div class="price"><span class="now">$9.99</span></div>
-            <p class="meta">Scripts, checklists, and quick-start steps to move faster.</p>
-            <div class="card-actions">
-              <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy now</a>
-              <a class="btn small" href="#starter" onclick="alert('Bundle with Starter Bundle if you want!')">Bundle idea</a>
-            </div>
-            <p class="helper">Tip: Add a unique payment link per product.</p>
-          </div>
-        </article>
-
-        <!-- Product 3 -->
-        <article class="card" id="templates"
-          data-product
-          data-name="Template Pack"
-          data-desc="templates copy paste listings outreach"
-          data-price="14.99">
-          <div class="thumb"><span class="pill">Bundle</span></div>
-          <div class="card-body">
-            <h3>Template Pack</h3>
-            <div class="price"><span class="now">$14.99</span></div>
-            <p class="meta">Ready-to-use templates for listings, outreach, and support replies.</p>
-            <div class="card-actions">
-              <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy now</a>
-              <a class="btn small" href="contact.html">Contact</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Product 4 -->
-        <article class="card" id="playbook"
-          data-product
-          data-name="Playbook PDF"
-          data-desc="pdf guide conversion repeat buyers"
-          data-price="24.99">
-          <div class="thumb"><span class="pill">Guide</span></div>
-          <div class="card-body">
-            <h3>Playbook PDF</h3>
-            <div class="price"><span class="now">$24.99</span></div>
-            <p class="meta">Step-by-step guide to improve conversion and customer experience.</p>
-            <div class="card-actions">
-              <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy now</a>
-              <a class="btn small" href="contact.html">Support</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Product 5 -->
-        <article class="card"
-          data-product
-          data-name="Supplier List"
-          data-desc="contacts resources directory"
-          data-price="11.99">
-          <div class="thumb"><span class="pill">Hot</span></div>
-          <div class="card-body">
-            <h3>Supplier List</h3>
-            <div class="price"><span class="now">$11.99</span></div>
-            <p class="meta">A curated list of resources. Update regularly as a “living” product.</p>
-            <div class="card-actions">
-              <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy now</a>
-              <a class="btn small" href="contact.html">Ask first</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Product 6 -->
-        <article class="card"
-          data-product
-          data-name="Mega Bundle"
-          data-desc="everything bundle best value"
-          data-price="39.99">
-          <div class="thumb"><span class="pill">Best value</span></div>
-          <div class="card-body">
-            <h3>Mega Bundle</h3>
-            <div class="price"><span class="now">$39.99</span><span class="was">$199.99</span></div>
-            <p class="meta">Everything in one. Perfect for a high-value offer.</p>
-            <div class="card-actions">
-              <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy now</a>
-              <a class="btn small" href="#featured">Back to top</a>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <p class="small" style="margin-top:14px">
-        Want “instant delivery”? Easiest is a payment link provider that emails the file automatically.
-        If you want to host files yourself, I can show you a simple “download page” flow too.
-      </p>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="spread">
-        <div class="row" style="gap:10px">
-          <img src="assets/logo.png" class="site-logo" alt="The Plug Atelier Logo">
-          <b>THE ◆ PLUG ATELIER</b>
-        </div>
-        <div class="small">© <span id="y"></span></div>
+    <div class="section-title">
+      <div>
+        <h2 id="featured">All Products</h2>
+        <p>Private supplier contacts — instant digital delivery</p>
       </div>
     </div>
-  </footer>
 
-  <script src="assets/script.js"></script>
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+    <div class="toolbar">
+      <input class="input" data-search type="text" placeholder="Search products…" />
+      <select data-sort>
+        <option value="featured">Sort: Featured</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+        <option value="name-asc">Name: A → Z</option>
+        <option value="name-desc">Name: Z → A</option>
+      </select>
+    </div>
+
+    <div class="grid" data-products-grid>
+
+      <!-- Product 1 — ASICS Suppliers -->
+      <article class="card" id="asics"
+        data-product
+        data-name="ASICS Suppliers"
+        data-desc="asics trainers shoes sneakers supplier"
+        data-price="9.99">
+        <div class="thumb">
+          <img src="images/Asics Finished.webp" alt="ASICS Suppliers">
+          <span class="pill">Most Popular</span>
+        </div>
+        <div class="card-body">
+          <h3>ASICS Suppliers</h3>
+          <div class="price">
+            <span class="now">£9.99</span>
+          </div>
+          <p class="meta">Private supplier contacts for ASICS trainers at wholesale price. Ships to UK and worldwide.</p>
+          <div class="card-actions">
+            <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 2 — Best Batch Shoes -->
+      <article class="card" id="best-batch"
+        data-product
+        data-name="Best Batch Shoes"
+        data-desc="batch shoes trainers sneakers best quality"
+        data-price="9.99">
+        <div class="thumb">
+          <span class="pill">Hot</span>
+          <span class="thumb-icon">👟</span>
+        </div>
+        <div class="card-body">
+          <h3>Best Batch Shoes</h3>
+          <div class="price">
+            <span class="now">£9.99</span>
+          </div>
+          <p class="meta">Top-quality batch shoe suppliers. The best reps available — high margin, fast sellers.</p>
+          <div class="card-actions">
+            <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 3 — High End Shoes -->
+      <article class="card" id="high-end-shoes"
+        data-product
+        data-name="High End Shoes"
+        data-desc="high end luxury shoes designer supplier"
+        data-price="12.99">
+        <div class="thumb">
+          <span class="pill">Premium</span>
+          <span class="thumb-icon">👠</span>
+        </div>
+        <div class="card-body">
+          <h3>High End Shoes</h3>
+          <div class="price">
+            <span class="now">£12.99</span>
+          </div>
+          <p class="meta">Exclusive supplier contacts for high-end designer shoes. Premium quality, high resell value.</p>
+          <div class="card-actions">
+            <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 4 — Kids Jordans -->
+      <article class="card" id="kids-jordans"
+        data-product
+        data-name="Kids Jordans"
+        data-desc="kids jordans nike children trainers"
+        data-price="9.99">
+        <div class="thumb">
+          <span class="pill">New</span>
+          <span class="thumb-icon">👶</span>
+        </div>
+        <div class="card-body">
+          <h3>Kids Jordans</h3>
+          <div class="price">
+            <span class="now">£9.99</span>
+          </div>
+          <p class="meta">Supplier contacts for kids Jordan trainers. Massive demand, easy flips on Vinted and eBay.</p>
+          <div class="card-actions">
+            <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 5 — Standard Jersey Supplier -->
+      <article class="card" id="standard-jersey"
+        data-product
+        data-name="Standard Jersey Supplier"
+        data-desc="jerseys football kits sports standard"
+        data-price="7.99">
+        <div class="thumb">
+          <span class="pill">Popular</span>
+          <span class="thumb-icon">⚽</span>
+        </div>
+        <div class="card-body">
+          <h3>Standard Jersey Supplier</h3>
+          <div class="price">
+            <span class="now">£7.99</span>
+          </div>
+          <p class="meta">Reliable supplier for football jerseys and kits. Great entry-level product with strong demand.</p>
+          <div class="card-actions">
+            <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 6 — Private Jersey Supplier -->
+      <article class="card" id="private-jersey"
+        data-product
+        data-name="Private Jersey Supplier"
+        data-desc="jerseys football kits sports private exclusive"
+        data-price="12.99">
+        <div class="thumb">
+          <span class="pill">Exclusive</span>
+          <span class="thumb-icon">🏆</span>
+        </div>
+        <div class="card-body">
+          <h3>Private Jersey Supplier</h3>
+          <div class="price">
+            <span class="now">£12.99</span>
+          </div>
+          <p class="meta">My private, premium jersey contact. Higher quality than the standard — not shared publicly.</p>
+          <div class="card-actions">
+            <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 7 — Fairpods Supplier -->
+      <article class="card" id="fairpods"
+        data-product
+        data-name="Fairpods Supplier"
+        data-desc="fairpods airpods earbuds electronics"
+        data-price="9.99">
+        <div class="thumb">
+          <span class="pill">Tech</span>
+          <span class="thumb-icon">🎧</span>
+        </div>
+        <div class="card-body">
+          <h3>Fairpods Supplier</h3>
+          <div class="price">
+            <span class="now">£9.99</span>
+          </div>
+          <p class="meta">Supplier contact for Fairpods / AirPod dupes. High-margin electronics — massive seller.</p>
+          <div class="card-actions">
+            <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 8 — Vintage Wholesalers -->
+      <article class="card" id="vintage"
+        data-product
+        data-name="Vintage Wholesalers"
+        data-desc="vintage clothing wholesale secondhand retro"
+        data-price="12.99">
+        <div class="thumb">
+          <span class="pill">Trending</span>
+          <span class="thumb-icon">🧥</span>
+        </div>
+        <div class="card-body">
+          <h3>Vintage Wholesalers</h3>
+          <div class="price">
+            <span class="now">£12.99</span>
+          </div>
+          <p class="meta">Access to vintage clothing wholesale contacts. Huge on Vinted and Depop right now.</p>
+          <div class="card-actions">
+            <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 9 — Reselling Guide -->
+      <article class="card" id="reselling-guide"
+        data-product
+        data-name="Reselling Guide"
+        data-desc="reselling guide how to start beginner"
+        data-price="7.99">
+        <div class="thumb">
+          <span class="pill">Guide</span>
+          <span class="thumb-icon">📖</span>
+        </div>
+        <div class="card-body">
+          <h3>Reselling Guide</h3>
+          <div class="price">
+            <span class="now">£7.99</span>
+          </div>
+          <p class="meta">Everything you need to know to start reselling from scratch. Platforms, pricing and scaling.</p>
+          <div class="card-actions">
+            <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 10 — eBay Reselling Guide -->
+      <article class="card" id="ebay-guide"
+        data-product
+        data-name="eBay Reselling Guide"
+        data-desc="ebay reselling guide listings selling tips"
+        data-price="7.99">
+        <div class="thumb">
+          <span class="pill">Guide</span>
+          <span class="thumb-icon">📦</span>
+        </div>
+        <div class="card-body">
+          <h3>eBay Reselling Guide</h3>
+          <div class="price">
+            <span class="now">£7.99</span>
+          </div>
+          <p class="meta">Step-by-step guide to selling on eBay — listings, pricing, shipping and scaling your store.</p>
+          <div class="card-actions">
+            <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 12 — EVERYTHING Bundle -->
+      <article class="card" id="bundle"
+        data-product
+        data-name="EVERYTHING Bundle"
+        data-desc="everything bundle all suppliers guides best value package deal"
+        data-price="39.99">
+        <div class="thumb">
+          <span class="pill">Best Value</span>
+          <span class="thumb-icon">💎</span>
+        </div>
+        <div class="card-body">
+          <h3>EVERYTHING Bundle</h3>
+          <div class="price">
+            <span class="now">£39.99</span>
+            <span class="was">£119.99</span>
+          </div>
+          <p class="meta">Every single product in one — ASICS, jerseys, shoes, Fairpods, vintage, guides and more. Save over 65%.</p>
+          <div class="card-actions">
+            <a class="btn success buy-btn" href="BUY_LINK" target="_blank" rel="noopener">Get Everything</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 11 — Free Telegram Hacoo Group -->
+      <article class="card" id="telegram"
+        data-product
+        data-name="Free Telegram Hacoo Group"
+        data-desc="telegram free community hacoo deals"
+        data-price="0">
+        <div class="thumb">
+          <span class="pill green">Free</span>
+          <span class="thumb-icon">💬</span>
+        </div>
+        <div class="card-body">
+          <h3>Free Telegram Hacoo Group</h3>
+          <div class="price">
+            <span class="now">Free</span>
+          </div>
+          <p class="meta">Join our free Telegram group for Hacoo deals, supplier previews and reselling tips.</p>
+          <div class="card-actions">
+            <a class="btn primary" href="BUY_LINK" target="_blank" rel="noopener">Join Free</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">THE PLUG ATELIER</div>
+        <div class="footer-tagline">Digital Supplier Vault</div>
+        <p class="footer-desc">Private, verified supplier contacts for the UK reselling market.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="#Ralph">Ralph Lauren</a>
+        <a href="#jersey">Jersey Supplier</a>
+        <a href="#bundle">Mega Bundle</a>
+      </div>
+      <div>
+        <h4>Info</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="https://www.tiktok.com/@theplugatelier" target="_blank" rel="noopener">TikTok</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+    </div>
+    <hr class="sep">
+    <div class="footer-bottom">
+      <span>© <span id="y"></span> The Plug Atelier. All rights reserved.</span>
+      <span>All products are digital — instant delivery.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>

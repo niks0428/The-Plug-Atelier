@@ -74,33 +74,24 @@
   });
 })();
 
-// 🔥 "REAL" SALE COUNTDOWN (persistent across refresh + pages via localStorage)
-// + Under 20 min: animate  | Under 5 min: show HURRY + stronger animation
-(function saleCountdownPersistent(){
+// 🔥 SALE COUNTDOWN — 20 min from first visit, ends permanently when it expires
+(function saleCountdown(){
+  const DURATION_MS = 20 * 60 * 1000;
+  const KEY = "tpa_sale_end_v2";
+
   const cd = document.getElementById("countdown");
   if (!cd) return;
 
   const bar = document.querySelector(".countdown-wrap");
   const saleText = document.getElementById("saleText");
+  const announce = document.querySelector(".announce");
 
-  const KEY_END = "tpa_sale_end_v1";
-  const KEY_DURATION = "tpa_sale_duration_v1";
-
-  const DEFAULT_DURATION_SECONDS = 20 * 60; // 20 minutes
-  const duration = Number(localStorage.getItem(KEY_DURATION)) || DEFAULT_DURATION_SECONDS;
-
-  function nowMs(){ return Date.now(); }
-
-  function getOrCreateEndMs(){
-    const saved = Number(localStorage.getItem(KEY_END));
-    if (!saved || Number.isNaN(saved) || saved <= nowMs()) {
-      const newEnd = nowMs() + duration * 1000;
-      localStorage.setItem(KEY_END, String(newEnd));
-      localStorage.setItem(KEY_DURATION, String(duration));
-      return newEnd;
-    }
-    return saved;
+  // Set end time on first visit only — never overwrite an existing one
+  if (!localStorage.getItem(KEY)) {
+    localStorage.setItem(KEY, String(Date.now() + DURATION_MS));
   }
+
+  const SALE_END = Number(localStorage.getItem(KEY));
 
   function format(seconds){
     const m = Math.floor(seconds / 60);
@@ -110,32 +101,24 @@
 
   function setUrgency(seconds){
     if (!bar) return;
-
-    // Reset classes
     bar.classList.remove("is-urgent", "is-hurry");
-
-    // Default text
     if (saleText) saleText.textContent = "🔥 FLASH SALE — 20% OFF ENDS IN";
-
     if (seconds <= 300) {
       bar.classList.add("is-hurry");
       if (saleText) saleText.textContent = "⚠️ HURRY — SALE ENDS IN";
-    } else if (seconds <= 1200) { // 20 minutes
+    } else if (seconds <= 1200) {
       bar.classList.add("is-urgent");
     }
   }
 
   function tick(){
-    const endMs = getOrCreateEndMs();
-    const remaining = Math.max(0, Math.floor((endMs - nowMs()) / 1000));
-
+    const remaining = Math.max(0, Math.floor((SALE_END - Date.now()) / 1000));
+    if (remaining <= 0) {
+      if (announce) announce.style.display = "none";
+      return;
+    }
     cd.textContent = format(remaining);
     setUrgency(remaining);
-
-    // When it hits 0, start a new sale window automatically
-    if (remaining <= 0) {
-      localStorage.removeItem(KEY_END);
-    }
   }
 
   tick();
