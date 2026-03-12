@@ -76,8 +76,8 @@
 
 // 🔥 SALE COUNTDOWN — 20 min from first visit, ends permanently when it expires
 (function saleCountdown(){
-  const DURATION_MS = 20 * 60 * 1000;
-  const KEY = "tpa_sale_end_v2";
+  const DURATION_MS = 2 * 60 * 60 * 1000;
+  const KEY = "tpa_sale_end_v3";
 
   const cd = document.getElementById("countdown");
   if (!cd) return;
