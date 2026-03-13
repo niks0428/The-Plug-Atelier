@@ -8,6 +8,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .email-capture { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 48px 32px; text-align: center; margin: 60px auto; max-width: 560px; }
+    .email-capture h2 { font-size: 1.5rem; margin-bottom: 8px; }
+    .email-capture p { color: #9ca3af; margin-bottom: 24px; font-size: 0.95rem; }
+    .email-form { display: flex; gap: 8px; max-width: 400px; margin: 0 auto; }
+    .email-form input { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 12px 16px; color: #fff; font-size: 0.95rem; outline: none; }
+    .email-form input::placeholder { color: #6b7280; }
+    .email-form input:focus { border-color: rgba(255,255,255,0.35); }
+    .email-form button { background: #fff; color: #000; border: none; border-radius: 8px; padding: 12px 20px; font-weight: 700; cursor: pointer; white-space: nowrap; font-size: 0.9rem; transition: opacity 0.2s; }
+    .email-form button:hover { opacity: 0.85; }
+    .email-success { color: #4ade80; margin-top: 12px; font-size: 0.9rem; display: none; }
+  </style>
 </head>
 <body>
 
@@ -211,6 +223,17 @@
   </div>
 </section>
 
+<!-- Email Capture -->
+<section class="email-capture">
+  <h2>Get Supplier Updates</h2>
+  <p>Be first to know when new suppliers and guides drop. No spam, ever.</p>
+  <div class="email-form">
+    <input type="email" id="emailInput" placeholder="your@email.com" />
+    <button onclick="submitEmail()">Notify Me</button>
+  </div>
+  <p class="email-success" id="emailSuccess">✓ You're in! We'll be in touch.</p>
+</section>
+
 <!-- CTA Banner -->
 <div class="cta-banner">
   <div class="container">
@@ -253,5 +276,28 @@
 
 <script src="assets/script.js"></script>
 <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+<script>
+function submitEmail() {
+  const input = document.getElementById('emailInput');
+  const email = input.value.trim();
+  if (!email || !email.includes('@')) { input.focus(); return; }
+  fetch('https://uktradingsignals.co.uk/api/email', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, source: 'plug_atelier' })
+  })
+  .then(r => r.json())
+  .then(() => {
+    input.value = '';
+    document.getElementById('emailSuccess').style.display = 'block';
+  })
+  .catch(() => {
+    document.getElementById('emailSuccess').style.display = 'block';
+  });
+}
+document.getElementById('emailInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') submitEmail();
+});
+</script>
 </body>
 </html>
