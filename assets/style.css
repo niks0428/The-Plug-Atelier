@@ -391,6 +391,25 @@ h1 .accent { color: var(--text); border-bottom: 3px solid var(--text); }
 .card-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .card-actions .btn { flex: 1; min-width: 90px; justify-content: center; }
 
+.discount-code-box {
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--bg-gray);
+  border: 1px dashed #ccc;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.discount-code {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text);
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
 /* ── Testimonials ── */
 .testimonials {
   background: var(--bg-gray);
