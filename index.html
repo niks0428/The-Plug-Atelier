@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>The Plug Atelier — Premium Supplier Vault</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -165,6 +168,8 @@
   <p>Be first to know when new suppliers and guides drop. No spam, ever.</p>
   <div class="email-form">
     <input type="email" id="emailInput" placeholder="your@email.com" />
+    <!-- honeypot: bots fill this, humans don't -->
+    <input type="text" id="emailHoneypot" name="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true" />
     <button onclick="submitEmail()">Notify Me</button>
   </div>
   <p class="email-success" id="emailSuccess">✓ You're in! We'll be in touch.</p>
@@ -193,8 +198,8 @@
         <h4>Shop</h4>
         <a href="/products">All Products</a>
         <a href="/products#private-jersey">Private Jersey Supplier</a>
-        <a href="/products#private-jersey">Private Jersey</a>
-        <a href="/products#bundle">EVERYTHING Bundle</a>
+        <a href="/products#supplier-bundle">Supplier Bundle</a>
+        <a href="/products#everything-bundle">EVERYTHING Bundle</a>
       </div>
       <div>
         <h4>Info</h4>
@@ -216,10 +221,15 @@
 <script src="assets/script.js"></script>
 <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 <script>
+let _emailSubmitting = false;
 function submitEmail() {
+  if (_emailSubmitting) return;
+  // Honeypot check — bots fill hidden field, humans don't
+  if (document.getElementById('emailHoneypot').value) return;
   const input = document.getElementById('emailInput');
   const email = input.value.trim();
-  if (!email || !email.includes('@')) { input.focus(); return; }
+  if (!email || !email.includes('@') || !email.includes('.')) { input.focus(); return; }
+  _emailSubmitting = true;
   fetch('https://uktradingsignals.co.uk/api/email', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
